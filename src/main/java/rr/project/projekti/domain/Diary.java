@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-
+//Entity ja toiminnallisuus, luodaan muuttujat, getterit ja setterit
 
 @Entity
 public class Diary {
@@ -77,7 +77,7 @@ public class Diary {
         this.mood = mood;
     }
 
-
+        
         @Override
         public String toString() {
             return "Diary [activity=" + activity + ", date=" + date + ", id=" + id + ", kcal=" + kcal + ", mood=" + mood

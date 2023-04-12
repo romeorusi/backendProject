@@ -11,7 +11,6 @@ import rr.project.projekti.domain.DiaryRepository;
 
 
 
-
 @SpringBootApplication
 public class ProjektiApplication {
 
@@ -19,12 +18,12 @@ public class ProjektiApplication {
 		SpringApplication.run(ProjektiApplication.class, args);
 	}
 
-
+	//commandlinerunner jolla voidaan testata
 	@Bean
 	
 		public CommandLineRunner demo(DiaryRepository diaryRepository) {
 			return (args) -> {
-				// save a couple of customers
+				// Luodaan dataa jolla testataan vasemmalta oikealle: activity, date, kcal, mood.
 				diaryRepository.save(new Diary("Kävin lenkillä", "2021-05-01", "2500", "Hyvä"));
 				diaryRepository.save(new Diary("Hypin parvekkeelta", "2023-04-06", "2500", "Hyvä"));
 				diaryRepository.save(new Diary("Kävin lenkillä", "2023-09-12", "2600", "Very sad"));

@@ -12,6 +12,7 @@
         <div>
             <form th:object="${diary}" th:action="@{save}" action="#" method="post"> 
 
+
                 <label for="activity">Activity</label>
                 <input type="text" id="activity" th:field="*{activity}" class="form-control"/>
                 
@@ -31,7 +32,6 @@
                 </select>
                 
                 
-
                 <input type="submit" value="Save"></input>
             </form>
         </div>
