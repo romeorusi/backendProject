@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Edit diary entry</title>
+</head>
+<body>
+    <form th:action="@{../save}" th:object="${diary}" action="#" method="post">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <label for="activity">activity:</label>
+        <input type="text" th:field="*{activity}" id="activity" />
+        <br/>
+
+        <label for="date">date:</label>
+        <input type="date" th:field="*{date}" id="date" />
+        <br/>
+
+        <label for="kcal">kcal:</label>
+        <input type="text" th:field="*{kcal}" id="kcal" />
+        <br/>
+
+        <label for="mood">Mood</label>
+                <select id="mood" th:field="*{mood}" class="form-control">
+                    <option value="very sad">Very Sad</option>
+                    <option value="sad">Sad</option>
+                    <option value="content">Neutral</option>
+                    <option value="happy">Happy</option>
+                    <option value="very happy">Very Happy</option>
+                </select>
+        <br/>
+
+                
+        
+
+        <input type="submit" class="btn btn-primary" value="Save">
+
+        </div>
+    </form>
+
+</body>
+</html>

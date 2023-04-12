@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary entries</title>
+</head>
+<body>
+    <h1>
+        Daily Diary
+    </h1>
+
+    <!--<h2>
+        Hello <span sec:authentication="name"></span>
+    </h2> -->
+
+
+    <!--<div class="col-md-4" style="padding:20px 0">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out" class="btn btn-sm btn-danger"/>
+        </form>
+    </div> -->
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Date</th>
+                <th>KCal</th>
+                <th>Year</th>                
+                <!--<th sec:authorize="hasAuthority('ADMIN')"> </th> -->
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="diary : ${entries}">
+                <td th:text="${diary.activity}"></td>
+                <td th:text="${diary.date}"></td>
+                <td th:text="${diary.kcal}"></td>
+                <td th:text="${diary.mood}"></td>
+                
+                <!--<td sec:authorize="hasAuthority('ADMIN')">--> 
+
+                <td><a th:href="@{/editdiary/{id}(id=${diary.id})}" class="btn btn-danger" >Edit</a> </td> 
+                <td><a th:href="@{/delete/{id}(id=${diary.id})}" class="btn btn-xs btn-danger">Delete</a></td>                
+            </tr>
+        </tbody>
+    </table>
+    <a href="/add" class="btn btn-primary">Add entry</a>
+</body>
+</html>

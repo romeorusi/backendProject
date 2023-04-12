@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diaryentries</title>
+</head>
+<body>
+        <h1>Add a new entry</h1>
+        <div>
+            <form th:object="${diary}" th:action="@{save}" action="#" method="post"> 
+
+                <label for="activity">Activity</label>
+                <input type="text" id="activity" th:field="*{activity}" class="form-control"/>
+                
+                <label for="date">Date</label>
+                <input type="date" id="date" th:field="*{date}" class="form-control"/>
+
+                <label for="kcal">KCAL</label>
+                <input type="text" id="kcal" th:field="*{kcal}" class="form-control"/>
+                
+                <label for="mood">Mood</label>
+                <select id="mood" th:field="*{mood}" class="form-control">
+                    <option value="very sad">Very Sad</option>
+                    <option value="sad">Sad</option>
+                    <option value="content" th:selected="${diary.mood == 'content'}">Neutral</option>
+                    <option value="happy">Happy</option>
+                    <option value="very happy">Very Happy</option>
+                </select>
+                
+                
+
+                <input type="submit" value="Save"></input>
+            </form>
+        </div>
+</body>
+</html>
