@@ -16,7 +16,5 @@ public interface DiaryRepository extends CrudRepository<Diary, Long> {
 
     List<Diary> findByActivity(String string);
 
-
-
     
 }
