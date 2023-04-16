@@ -1,13 +1,11 @@
 package rr.project.projekti.domain;
 
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 
 //Entity ja toiminnallisuus, luodaan muuttujat, getterit ja setterit
 

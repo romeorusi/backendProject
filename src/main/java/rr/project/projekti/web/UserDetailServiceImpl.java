@@ -19,7 +19,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetailServiceImpl(UserRepository userRepository) {
     this.repository = userRepository;
     }
-
     
 
     @Override
