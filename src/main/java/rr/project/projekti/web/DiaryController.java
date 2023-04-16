@@ -25,6 +25,12 @@ public class DiaryController {
     @Autowired
     private DiaryRepository diaryRepository;
 
+    //kirjautuminen
+    @RequestMapping(value="/login")
+    public String login() {
+        return "login";
+    }
+
 
     //toiminnallisuus jolla /diaryentries kohtaan navigoitaessa käyttäjä näkee kirjaamansa merkinnät
     @RequestMapping(value = "/diaryentries", method = RequestMethod.GET)

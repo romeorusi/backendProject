@@ -22,9 +22,7 @@ public class Diary {
     private String kcal;
     private String mood;
 
-    /*@ManyToOne
-    @JoinColumn(name = "userid")
-    */
+      
 
     public Diary() {
     }

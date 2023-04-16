@@ -13,16 +13,16 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
         Daily Diary
     </h1>
 
-    <!--<h2>
+    <h2>
         Hello <span sec:authentication="name"></span>
-    </h2> -->
+    </h2>
 
 
-    <!--<div class="col-md-4" style="padding:20px 0">
+   <div class="col-md-4" style="padding:20px 0">
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out" class="btn btn-sm btn-danger"/>
         </form>
-    </div> -->
+    </div>
     
     <table class="table table-striped">
         <thead>
@@ -30,8 +30,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
                 <th>Activity</th>
                 <th>Date</th>
                 <th>KCal</th>
-                <th>Year</th>                
-                <!--<th sec:authorize="hasAuthority('ADMIN')"> </th> -->
+                <th>Mood</th>                
+                <th sec:authorize="hasAuthority('ADMIN')"> </th>
                 
             </tr>
         </thead>
@@ -42,7 +42,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
                 <td th:text="${diary.kcal}"></td>
                 <td th:text="${diary.mood}"></td>
                 
-                <!--<td sec:authorize="hasAuthority('ADMIN')">--> 
+                <td sec:authorize="hasAuthority('ADMIN')">
 
                 <td><a th:href="@{/editdiary/{id}(id=${diary.id})}" class="btn btn-danger" >Edit</a> </td> 
                 <td><a th:href="@{/delete/{id}(id=${diary.id})}" class="btn btn-xs btn-danger">Delete</a></td>                
