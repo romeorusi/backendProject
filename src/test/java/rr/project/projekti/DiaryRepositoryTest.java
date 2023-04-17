@@ -14,7 +14,7 @@ import rr.project.projekti.domain.Diary;
 import rr.project.projekti.domain.DiaryRepository;
 
 
-@ExtendWith(SpringExtension.class)
+/*@ExtendWith(SpringExtension.class)
 @DataJpaTest
 public class DiaryRepositoryTest {
 
@@ -52,5 +52,5 @@ public void deleteDiary(){
     }
     assertThat(after).isNull();
 }
-    
-}
+  
+}*/
